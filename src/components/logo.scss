@@ -1,0 +1,73 @@
+/*LOGO*/
+.logo {
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  &:before {
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 50%;
+    border-radius: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+  }
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    margin-top: 25%;
+    background: rgba(228, 3, 137, 1);
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: .87;
+    &:first-child {
+      transform: rotate(120deg);
+      background: rgba(0, 173, 255, 1);
+    }
+    &:last-child {
+      transform: rotate(-120deg);
+      background: rgba(255, 251, 20, 1);
+    }
+  }
+
+  -webkit-animation: spin 20s linear infinite;
+  -moz-animation: spin 20s linear infinite;
+  animation: spin 20s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
