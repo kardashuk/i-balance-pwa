@@ -1,2 +1,2 @@
 # i-balance-pwa
-IBalance PWA
+iBalance PWA
