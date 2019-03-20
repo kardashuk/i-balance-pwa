@@ -8,6 +8,7 @@ export default class Routes {
         routeHandler.setPwaSchema({
             name: 'iBalance PWA',
             short_name: 'iBalance PWA',
+            start_url: '/i-balance-pwa/',
             icons: [
                 {
                     src: Favicon512,

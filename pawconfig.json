@@ -5,5 +5,5 @@
   "asyncCSS": true,
   "serviceWorker": false,
   "serverSideRender": true,
-  "singlePageApplication": false
+  "singlePageApplication": true
 }
