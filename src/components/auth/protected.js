@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import cookie from '../services/cookie';
+import cookie from '../../services/cookie';
 
 export default class Protected extends React.Component {
     redirectUrl = '/login';

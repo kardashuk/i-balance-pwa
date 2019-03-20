@@ -6,7 +6,7 @@ export default class GuestLayout extends React.PureComponent {
         // eslint-disable-next-line
         const {children} = this.props;
         return (
-            <div>
+            <div className="page">
                 <header className="hero is-light">
                     <div className="hero-head container">
                         <nav className="navbar has-shadow" role="navigation" aria-label="main navigation">

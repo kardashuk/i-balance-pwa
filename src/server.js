@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPWAIcon from './resources/img/i-balance-pwa.png';
+import iBalancePWAIcon from './resources/img/i-balance-pwa.png';
 
 export default class Server {
 
@@ -15,7 +15,7 @@ export default class Server {
 
         serverHandler.hooks.beforeHtmlRender.tapPromise('AddFavIcon', async (Application) => {
             const {htmlProps: {head}} = Application;
-            head.push(<link key="favicon" rel="shortcut icon" type="image/png" href={ReactPWAIcon}/>);
+            head.push(<link key="favicon" rel="shortcut icon" type="image/png" href={iBalancePWAIcon}/>);
         });
 
         serverHandler.hooks.beforeHtmlRender.tapPromise('No JS issues', async (Application) => {

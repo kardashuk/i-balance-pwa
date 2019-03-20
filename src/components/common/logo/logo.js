@@ -1,8 +1,8 @@
 import React from 'react';
-import logoStyles from './logo.scss';
+import styles from './logo.scss';
 
 export default () => (
-    <div className={`${logoStyles.logo}`}>
+    <div className={`${styles.logo}`}>
         <div></div>
         <div></div>
         <div></div>

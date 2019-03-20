@@ -4,7 +4,7 @@ export default [
     {
         path: '/logout',
         exact: true,
-        component: import('../components/logout'),
+        component: import('../components/auth/logout'),
         seo: {
             title: 'Logging out...',
         },
@@ -14,7 +14,7 @@ export default [
         exact: true,
         component: import('../components/dashboard'),
         seo: {
-            title: 'User dashboard | ReactPWA Demo',
+            title: 'Dashboard | iBalancePWA',
         },
     },
 ];

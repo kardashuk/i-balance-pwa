@@ -1,0 +1,30 @@
+.splash {
+
+  .logo{
+    width: 240px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 240px;
+  }
+  .btn {
+    border-radius: 50%;
+    width: 90px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
+    text-align: center;
+    background-color: #DF409A;
+    color: rgba(255,255,255,.9);
+    font-size: 1.2em;
+    text-decoration: none;
+    line-height: 90px;
+  }
+}

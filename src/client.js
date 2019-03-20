@@ -1,3 +1,4 @@
+import './resources/css/global.scss';
 
 export default class Client {
     apply(clientHandler) {

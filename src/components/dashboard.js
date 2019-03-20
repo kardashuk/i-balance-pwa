@@ -1,6 +1,6 @@
 import React from 'react';
-import Protected from './protected';
-import UserLayout from './user-layout';
+import Protected from './auth/protected';
+import UserLayout from './auth/user-layout';
 
 export default () => (
     <Protected>

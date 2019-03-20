@@ -1,4 +1,4 @@
-import cookie from '../services/cookie';
+import cookie from '../../services/cookie';
 
 export default {
     isLoggedIn: () => (cookie.getItem && typeof cookie.getItem === 'function' && cookie.getItem('secretKey') === 'allowmein'),
