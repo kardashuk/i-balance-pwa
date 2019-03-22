@@ -7,8 +7,6 @@
     "build": "pawjs --no-cache --config=./prod-pawconfig.json --env=production build",
     "lint": "pawjs lint",
     "test": "pawjs --no-cache test",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
     "deploy": "gh-pages -d dist"
   },
   "license": "MIT",
@@ -16,15 +14,12 @@
     "@pawjs/image-optimizer": "^2.2.0-beta.0",
     "@pawjs/pawjs": "2.3.2",
     "@pawjs/srcset": "^2.1.0-beta.0",
-    "aws-sdk": "^2.426.0",
     "cloudinary": "^1.13.2",
     "eslint-import-resolver-webpack": "^0.11.0",
     "react-router-config": "^5.0.0",
     "react-router-dom": "^4.3.1",
-    "snyk": "^1.124.1",
     "universal-fetch": "^1.0.0"
   },
-  "snyk": true,
   "devDependencies": {
     "@pawjs/sass": "^2.2.0-beta.0",
     "gh-pages": "^2.0.1",
