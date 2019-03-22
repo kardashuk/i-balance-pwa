@@ -45,9 +45,6 @@ export default class SplashScreen extends React.Component {
         }
         return (
             <section className={`${styles.splash}`}>
-                <h1 className="title">
-                    iBalance
-                </h1>
                 <div className={`${styles.logo}`}>
                     <Logo></Logo>
                 </div>

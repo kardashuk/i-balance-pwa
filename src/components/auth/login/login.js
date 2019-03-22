@@ -5,6 +5,8 @@ import cookie from '../../../services/cookie';
 import Authenticator from '../fake-authenticator';
 import Loading from '../../common/loading/loading';
 import styles from './login.scss';
+import AWS from 'aws-sdk';
+
 export default class Login extends React.Component {
     onLoginRedirectUrl = '/dashboard';
 
