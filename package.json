@@ -6,8 +6,7 @@
     "start": "pawjs --no-cache --env=development start",
     "build": "pawjs --no-cache --config=./prod-pawconfig.json --env=production build",
     "lint": "pawjs lint",
-    "test": "pawjs --no-cache test",
-    "deploy": "gh-pages -d dist"
+    "test": "pawjs --no-cache test"
   },
   "license": "MIT",
   "dependencies": {
@@ -22,7 +21,6 @@
   },
   "devDependencies": {
     "@pawjs/sass": "^2.2.0-beta.0",
-    "gh-pages": "^2.0.1",
     "replace-in-file-webpack-plugin": "^1.0.6",
     "webpack-bundle-analyzer": "^3.0.3"
   }
