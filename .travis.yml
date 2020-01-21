@@ -5,8 +5,6 @@ addons:
   apt:
     sources:
       - google-chrome
-    packages:
-      - google-chrome-stable
 cache:
   directories:
     - "node_modules"
@@ -16,7 +14,7 @@ branches:
 before_deploy:
   - ng build --prod
 script:
-  ng test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  ng test-headless
 deploy:
   provider: pages
   skip-cleanup: true
