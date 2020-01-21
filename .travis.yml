@@ -1,6 +1,12 @@
 language: node_js
 node_js:
   - "10.17"
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 cache:
   directories:
     - "node_modules"
@@ -9,6 +15,8 @@ branches:
     - master
 before_deploy:
   - ng build --prod
+script:
+  ng test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 deploy:
   provider: pages
   skip-cleanup: true
