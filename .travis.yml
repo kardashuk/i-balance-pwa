@@ -12,7 +12,7 @@ branches:
   only:
     - master
 before_deploy:
-  - ng build --prod --baseHref='./'
+  - ng build --prod --baseHref='https://kardashuk.github.io/i-balance-pwa/'
 script:
   npm run test-headless
 deploy:
