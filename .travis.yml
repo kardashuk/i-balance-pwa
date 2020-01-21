@@ -12,7 +12,7 @@ branches:
   only:
     - master
 before_deploy:
-  - ng build --prod
+  - ng build --prod --baseHref='./'
 script:
   npm run test-headless
 deploy:
