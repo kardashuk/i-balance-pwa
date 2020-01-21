@@ -23,5 +23,13 @@
                     [chartType]="'doughnut'">
             </canvas>
         </div>
+
+        <ul>
+            <li *ngFor="let item of report.expenses|keyvalue"
+                (click)="toggleCat(item.key)"  [ngStyle]="{opacity: excluded[item.key]?  .5 :1}"
+                [title]="item.key">
+                {{item.key}} <b>{{item.value|currency:' '}}</b>
+            </li>
+        </ul>
     </div>
 </div>

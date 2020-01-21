@@ -16,6 +16,7 @@ export class ExpensesComponent implements OnInit, OnChanges {
         prev: 0,
         avg: 0,
     };
+    excluded = {};
 
     constructor() {
         this.colors = [
@@ -84,7 +85,12 @@ export class ExpensesComponent implements OnInit, OnChanges {
 
     cat2label = cat => cat.replace('Expenses:', '').replace('\\u0421', 'C');
 
-    seriesByCat = (exp) => this.expensesOrdered.map(cat => exp[cat]);
+    seriesByCat = (exp) => this.expensesOrdered.map(cat => this.excluded[cat] ? '0.00' : exp[cat]);
 
     sumMoney = (a, b) => (parseFloat(a) + parseFloat(b)).toFixed();
+
+    toggleCat(cat) {
+        this.excluded[cat] = !this.excluded[cat];
+        this.buildChartData();
+    }
 }
