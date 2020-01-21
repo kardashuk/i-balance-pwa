@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <div class="exp-totals-container">
+            <div class="exp_totals">
+                <div>
+                    {{report.month|date:'MMMM'}}:<br/>
+                    <b class="money">{{totals.month|currency:' '}}</b>
+                </div>
+                <div>
+                    Prev:<br/>
+                    <b class="money">{{totals.prev|currency:' '}}</b>
+                </div>
+                <div>
+                    Avg:<br/>
+                    <b class="money">{{totals.avg|currency:' '}}</b>
+                </div>
+            </div>
+            <canvas baseChart height="320"
+                    [colors]="[{backgroundColor:colors},{backgroundColor:colors}, {backgroundColor:colors}]"
+                    [data]="chartData"
+                    [labels]="chartLabels"
+                    [legend]="false"
+                    [chartType]="'doughnut'">
+            </canvas>
+        </div>
+    </div>
+</div>

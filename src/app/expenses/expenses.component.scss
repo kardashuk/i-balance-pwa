@@ -1,0 +1,27 @@
+.exp_totals{
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #fff;
+  left:0;
+  right:0;
+  margin: auto;
+  top:0;
+  bottom:0;
+  text-align: center;
+  padding: .5em 0;
+  box-sizing: border-box;
+  font-size: .9em;
+  div{
+    margin-bottom: 5px;
+  }
+}
+.money{
+  font-size: 1.25em;
+  font-weight: 300;
+}
+.exp-totals-container{
+  position: relative;
+}
