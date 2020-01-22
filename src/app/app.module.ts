@@ -15,6 +15,8 @@ import {AuthComponent} from './auth/auth.component';
 import {FormsModule} from '@angular/forms';
 import {ExpensesComponent} from './expenses/expenses.component';
 import {ChartsModule} from 'ng2-charts';
+import { BalanceComponent } from './balance/balance.component';
+import { ProfitComponent } from './profit/profit.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import {ChartsModule} from 'ng2-charts';
         DummyComponent,
         LoginComponent,
         AuthComponent,
-        ExpensesComponent
+        ExpensesComponent,
+        BalanceComponent,
+        ProfitComponent
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,25 @@
+<div class="pnl">
+    <div class="balance">
+        UAH
+        <span class="money">{{report.balance['₴']|currency:' '}}</span>
+    </div>
+    <div  class="balance">
+        UKRSIB <span class="money">{{report.balance['UKRSIB']|currency:' '}}</span>
+    </div>
+    <div class="balance">
+        USD <span class="money">{{report.balance['$'].amount|currency:'$'}}</span>
+        <div class="profit">
+            <app-profit [value]="report.balance['$'].amount*report.balance['$'].course-report.balance['$'].uah"></app-profit>
+
+            <span class="money">{{report.balance['$'].amount*report.balance['$'].course|currency:' '}}</span>
+        </div>
+    </div>
+    <div class="balance">
+        EUR <span class="money">{{report.balance['€'].amount|currency:'€'}}</span>
+        <div class="profit">
+            <app-profit [value]="report.balance['€'].amount*report.balance['€'].course-report.balance['€'].uah"></app-profit>
+
+            <span class="money">{{report.balance['€'].amount*report.balance['€'].course|currency:' '}}</span>
+        </div>
+    </div>
+</div>

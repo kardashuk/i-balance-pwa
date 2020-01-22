@@ -1,5 +1,6 @@
 <div *ngFor="let item of items | async">
 
     <app-expenses [report]="item"></app-expenses>
+    <app-balance [report]="item"></app-balance>
     <!--{{item.avg_expenses|json}}-->
 </div>

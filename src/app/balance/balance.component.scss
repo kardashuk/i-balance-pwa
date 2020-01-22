@@ -1,0 +1,11 @@
+.money{
+  float:right;
+  margin-left: 1em;
+}
+.profit{
+  font-size: .5em;
+  text-align: right;
+}
+.balance:not(:last-child){
+  margin-bottom: .3em;
+}
