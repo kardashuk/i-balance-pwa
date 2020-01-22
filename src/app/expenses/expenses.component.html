@@ -1,5 +1,15 @@
 <div>
-    <div>
+    <div class="exp-pnl pnl">
+        <ul class="exp-list">
+            <li *ngFor="let item of expenses;index as i;"
+                (click)="toggleCat(item.name)"  [ngStyle]="{opacity: excluded[item.name]?  .5 :1}"
+                [title]="chartLabels[i]">
+                <div class="legend-color"
+                     [ngClass]="{checked: excluded[item.name]}"
+                     [ngStyle]="{backgroundColor: colors[i]}" >
+                </div>
+            </li>
+        </ul>
         <div class="exp-totals-container">
             <div class="exp_totals">
                 <div>
@@ -23,13 +33,5 @@
                     [chartType]="'doughnut'">
             </canvas>
         </div>
-
-        <ul>
-            <li *ngFor="let item of report.expenses|keyvalue"
-                (click)="toggleCat(item.key)"  [ngStyle]="{opacity: excluded[item.key]?  .5 :1}"
-                [title]="item.key">
-                {{item.key}} <b>{{item.value|currency:' '}}</b>
-            </li>
-        </ul>
     </div>
 </div>

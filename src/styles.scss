@@ -6,8 +6,16 @@ body{
   font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-size: 18px;
   line-height: 1.1;
+  background: #eee;
+  margin: 0;
 }
 
 .money{
   //font-family: Courier, monospace;
+}
+.pnl{
+  overflow: hidden;
+  padding: .5em;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
 }

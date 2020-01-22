@@ -24,4 +24,47 @@
 }
 .exp-totals-container{
   position: relative;
+  z-index: 1;
+}
+
+
+.legend-color{
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border-radius:2px;
+  display: inline-block;
+  margin-right: .5em;
+  &:before{
+    background: inherit;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 1;
+  }
+  &.checked:after{
+    content: '×';
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+.exp-list{
+  position: absolute;
+  left:  calc(100%  - 1.5em);
+  list-style: none;
+  padding-left: 0;
+  li{
+    margin-bottom: .1em;
+  }
+}
+.exp-pnl{
+  padding-right: 2em;
 }

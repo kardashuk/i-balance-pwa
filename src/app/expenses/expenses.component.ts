@@ -9,6 +9,8 @@ export class ExpensesComponent implements OnInit, OnChanges {
     @Input() report: any;
     chartLabels = [];
     chartData = [];
+
+    expenses = [];
     expensesOrdered = [];
     colors = [];
     totals = {
@@ -20,18 +22,18 @@ export class ExpensesComponent implements OnInit, OnChanges {
 
     constructor() {
         this.colors = [
-            '#4CAF50', //food
-            '#FF9800', //birth
-            '#795548', //utils
-            '#F44336', //cloth
-            '#E91E63', //health
-            '#009688', //metro
-            '#827717', //hobby
-            '#9C27B0', //health
-            '#673AB7', //home
-            '#00BCD4', //wc
-            '#CDDC39', //others
-            '#03A9F4', //travels
+            '#4CAF50', // food
+            '#FF9800', // birth
+            '#795548', // utils
+            '#F44336', // cloth
+            '#E91E63', // health
+            '#009688', // metro
+            '#827717', // hobby
+            '#9C27B0', // health
+            '#673AB7', // home
+            '#00BCD4', // wc
+            '#CDDC39', // others
+            '#03A9F4', // travels
             '#FFC107',
             '#9E9E9E',
             '#03A9F4',
@@ -39,7 +41,8 @@ export class ExpensesComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-        this.expensesOrdered = this.expensesOrder(this.report.avg_expenses);
+        this.expenses = this.expensesOrder(this.report.avg_expenses);
+        this.expensesOrdered = this.expenses.map(e => e.name);
         this.chartLabels = this.expensesOrdered.map(this.cat2label);
         this.buildChartData();
         this.buildTotals();
@@ -59,12 +62,9 @@ export class ExpensesComponent implements OnInit, OnChanges {
 
     buildChartData() {
         this.chartData = [
-            this.seriesByCat(this.report.expenses),
-            this.seriesByCat(this.report.prev_expenses),
-            this.seriesByCat(this.report.avg_expenses),
-            // {data: this.seriesByCat(this.report.expenses), label: 'This month'},
-            // {data: this.seriesByCat(this.report.prev_expenses), label: ' Prev month'},
-            // {data: this.seriesByCat(this.report.avg_expenses), label: 'Average'}
+            this.seriesByCat(this.report.expenses, true),
+            this.seriesByCat(this.report.prev_expenses, true),
+            this.seriesByCat(this.report.avg_expenses, true),
         ];
     }
 
@@ -80,12 +80,12 @@ export class ExpensesComponent implements OnInit, OnChanges {
             }
         }
         expenses = expenses.sort((a, b) => a.order > b.order ? -1 : (a.order === b.order ? 0 : 1));
-        return expenses.map(e => e.name);
-    };
+        return expenses;
+    }
 
     cat2label = cat => cat.replace('Expenses:', '').replace('\\u0421', 'C');
 
-    seriesByCat = (exp) => this.expensesOrdered.map(cat => this.excluded[cat] ? '0.00' : exp[cat]);
+    seriesByCat = (exp, exclude = false) => this.expensesOrdered.map(cat => exclude && this.excluded[cat] ? '0.00' :  exp[cat]);
 
     sumMoney = (a, b) => (parseFloat(a) + parseFloat(b)).toFixed();
 
