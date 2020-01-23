@@ -15,7 +15,8 @@ export class TransactionsComponent implements OnInit {
         from: 'Assets:Cash',
         to: 'Expenses:Food',
         name: '',
-        amount: null
+        amount: null,
+        type: 'Manual'
     };
     items: Observable<any[]>;
     showForm = false;
