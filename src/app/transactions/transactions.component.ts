@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
@@ -22,6 +22,7 @@ export class TransactionsComponent implements OnInit {
     transaction = {...this.emptyTransaction};
 
     expensesCategories = [];
+    @ViewChild('name') nameElement: ElementRef;
 
     constructor(protected db: AngularFirestore) {
         this.items = this.db.collection('changes').valueChanges()
@@ -30,9 +31,9 @@ export class TransactionsComponent implements OnInit {
             );
         const expensesUid = '7e0211c4-c931-9961-93a0-09ed9d0463b1';
         this.db.collection('reports').valueChanges().subscribe((r: any) => {
-                console.log(r);
-                this.expensesCategories = r[0].categories.filter(c => c.parent === expensesUid);
-            });
+            console.log(r);
+            this.expensesCategories = r[0].categories.filter(c => c.parent === expensesUid);
+        });
     }
 
     ngOnInit() {
@@ -47,6 +48,9 @@ export class TransactionsComponent implements OnInit {
     newTransaction() {
         this.showForm = true;
         this.transaction = {...this.emptyTransaction};
+        setTimeout(() => { // this will make the execution after the above boolean has changed
+            this.nameElement.nativeElement.focus();
+        }, 0);
     }
 
     addTransaction() {
