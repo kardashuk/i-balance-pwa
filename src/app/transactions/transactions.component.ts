@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {map} from 'rxjs/operators';
 
 @Component({
     selector: 'app-transactions',
@@ -20,8 +21,18 @@ export class TransactionsComponent implements OnInit {
     showForm = false;
     transaction = {...this.emptyTransaction};
 
+    expensesCategories = [];
+
     constructor(protected db: AngularFirestore) {
-        this.items = this.db.collection('changes').valueChanges();
+        this.items = this.db.collection('changes').valueChanges()
+            .pipe(
+                map(c => c.sort((a: any, b: any) => a.date > b.date ? -1 : a.date === b.date ? 0 : 1))
+            );
+        const expensesUid = '7e0211c4-c931-9961-93a0-09ed9d0463b1';
+        this.db.collection('reports').valueChanges().subscribe((r: any) => {
+                console.log(r);
+                this.expensesCategories = r[0].categories.filter(c => c.parent === expensesUid);
+            });
     }
 
     ngOnInit() {
@@ -39,7 +50,7 @@ export class TransactionsComponent implements OnInit {
     }
 
     addTransaction() {
-        const time = new Date(this.transaction.date).getTime();
+        const time = new Date(this.transaction.date + (new Date()).toISOString().substr(10)).getTime();
         const transaction = {...this.transaction, date: time};
         this.db.collection('changes')
             .doc(this.uid(transaction)).set(transaction)
