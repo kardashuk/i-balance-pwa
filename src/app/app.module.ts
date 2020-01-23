@@ -17,6 +17,7 @@ import {ExpensesComponent} from './expenses/expenses.component';
 import {ChartsModule} from 'ng2-charts';
 import { BalanceComponent } from './balance/balance.component';
 import { ProfitComponent } from './profit/profit.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { ProfitComponent } from './profit/profit.component';
         AuthComponent,
         ExpensesComponent,
         BalanceComponent,
-        ProfitComponent
+        ProfitComponent,
+        TransactionsComponent
     ],
     imports: [
         BrowserModule,

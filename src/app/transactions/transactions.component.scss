@@ -1,0 +1,62 @@
+.remove{
+  float: right;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+}
+.money{
+  float: right;
+}
+.category{
+  font-size: .8em;
+  float: right;
+}
+.date{
+  font-size: .8em;
+}
+.transaction-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.transaction:not(:last-child){
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+.add-transaction{
+  color: #fff;
+  background: #4CAF50;
+  border: none;
+  float: right;
+  padding: .3em 1em;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+h4{
+  border-bottom: 1px solid #eee;
+  margin: 0 0 5px;
+  font-size: 1.2em;
+  color: #777;
+  font-weight: 100;
+  padding-bottom: 7px;
+}
+label{
+  font-size: .8em;
+ }
+input{
+  font-size: 1em;
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  &:focus{
+    border-bottom: 1px  solid #333;
+  }
+}
+.transaction-form{
+  padding-bottom: 20px;
+  .add-transaction{
+    margin-top: 5px;
+    font-size: 1.1em;
+  }
+}
