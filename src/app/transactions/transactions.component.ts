@@ -22,7 +22,7 @@ export class TransactionsComponent implements OnInit {
     transaction = {...this.emptyTransaction};
 
     expensesCategories = [];
-    @ViewChild('name', {static: true}) nameElement: ElementRef;
+    @ViewChild('name', {static: false}) nameElement: ElementRef;
 
     constructor(protected db: AngularFirestore) {
         this.items = this.db.collection('changes').valueChanges()
